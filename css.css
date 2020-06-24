@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    overflow-x: hidden;
+}
+
+/* First page */
+
+.layout {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 3rem;
+}
+
+.nav li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    position: relative;
+}
+
+.nav li::before {
+    color: #fba93b;
+    content: "\2022";
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: -3.5rem;
+}
+
+.nav li:first-of-type:before {
+    display: none;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #b4b4b4;
+    margin-bottom: 4rem;
+}
+
+.logo {
+    width: 428px;
+    height: 167px;
+    margin: 1.5rem 0;
+}
+
+.logo_nav {
+    display: inline-block;
+}
+
+/* -under line */
+
+.bottom {
+    text-align: center;
+    color: #a9a9a9;
+}
+
+.bottom h4 {
+    font-weight: lighter;
+    margin-bottom: 0.5rem;
+}
+
+.bottom p {
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    padding: 0 1rem;
+}
+
+.bottom p:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.bottom_date span {
+    color: black;
+}
+
+.bottom_date {
+    font-size: 0.7rem;
+}
+
+/* print first page*/
+@media print {
+    .logo {
+        width: 6.8cm;
+        height: 2.7cm;
+        margin: 5.6cm 0 0.6cm 0;
+    }
+
+    .nav {
+        margin-bottom: 1.4cm;
+    }
+
+    .nav li::before {
+        color: #ff9b00;
+        content: "\2022";
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+        position: absolute;
+        top: 0;
+        left: -1.5rem;
+    }
+
+    .nav li:first-of-type:before {
+        display: none;
+    }
+
+    .head {
+        margin-bottom: 2.1cm;
+    }
+
+    .bottom p:last-of-type {
+        margin-bottom: 0.7cm;
+    }
+}
+
+/* Next pages */
+
+.main_header {
+    border-bottom: 1px solid #cccccc;
+    page-break-before: always; /*блок main идет с новой страницы*/
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: bold;
+    align-items: center;
+    line-height: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.main_header_right {
+    text-align: right;
+}
+
+.main_layout {
+    width: 99%;
+    margin: 0 auto;
+}
+
+section {
+    font-size: 0.7rem;
+}
+
+section h3 {
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.col_1 {
+
+}
+
+.col_2 {
+    width: 15%;
+}
+
+caption {
+    border: 1px solid #ececec;
+    border-bottom: none;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+td, th {
+    border: 1px solid #ececec;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+td:last-child,
+th:last-child {
+    text-align: right;
+}
+
+td,
+th:last-child {
+    padding: 0.5rem 0.5rem 0.5rem 3rem;
+}
+
+tr:last-child {
+    font-weight: bold;
+}
+
+/*
+Режет конец строки и добавляет троеточие
+убрать, если нужен перенос строки
+*/
+
+td:first-child {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 2rem;
+}
+
+/**/
+
+tr:nth-child(2n-1){
+    background-color: #f6f7f8;
+}
